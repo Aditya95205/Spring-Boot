@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+      
+      //attributes of beans ->>ID and Class and scope
+      
+    <bean id="e1" class="Kiitmodel.Engine">
+        <constructor-arg value="Tata"></constructor-arg>
+        <constructor-arg value="25"></constructor-arg>
+        <constructor-arg value="2500"></constructor-arg>
+
+    </bean>
+     
+     <bean id="e2" class="Kiitmodel.Engine" scope=>
+     <constructor-arg value="Volvo"> </constructor-arg>
+     <constructor-arg value ="35"></constructor-arg>
+     <constructor-arg value="3500"></constructor-arg>
+     </bean>
+     
+    <bean id="g1" class="Kiitmodel.Gear" >
+      <property name="gearMfgName">
+      <value>Maruti</value>
+      </property>
+      <property name="gearLeverCount">
+      <value>8</value>
+      </property>
+      <property name="gearType">
+      <value>Manual</value>
+      </property>
+    </bean>
+   <bean id="g2" class ="Kiitmodel.Gear">
+     <constructor-arg value="BMW"> </constructor-arg>
+     <constructor-arg value ="12"></constructor-arg>
+     <constructor-arg value="AutoMative"></constructor-arg>
+   </bean>
+    
+   <bean id="c1" class="Kiitmodel.Car">
+   <constructor-arg value="Audi"> </constructor-arg>
+     <constructor-arg value ="White"></constructor-arg>
+     <constructor-arg value="1000"></constructor-arg>
+     <constructor-arg value ="e2"></constructor-arg>
+     <constructor-arg value="g2"></constructor-arg>
+   </bean>
+   
+   <bean id="c2" class="Kiitmodel.Car">
+   <property name="carMfgName">
+       <value>Mahindra</value>
+   </property>
+   <property name="carColor">
+       <value>Black</value>
+   </property>
+   <property name="carPrice">
+       <value>500.0</value>
+   </property>
+   <property name="engine" ref="e1">
+       <value>Mahindra</value>
+   </property>
+   </bean>
+   
+   
+</beans>
